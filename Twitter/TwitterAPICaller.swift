@@ -72,4 +72,33 @@ class TwitterAPICaller: BDBOAuth1SessionManager {
             failure(error)
         })
     }
+    //Same process as tweeting, but with favorite instead
+    func favoriteTweet(tweetID: Int, success: @escaping () -> (), failure: @escaping (Error) -> ()){
+        let newUrl = "https://api.twitter.com/1.1/favorites/create.json"
+        TwitterAPICaller.client?.post(newUrl, parameters: ["id": tweetID], progress: nil, success: { (task: URLSessionDataTask, response: Any?) in
+            success()
+        }, failure: { (task: URLSessionDataTask?, error: Error) in
+            failure(error)
+        })
+    }
+    //Same process as last 2 functions
+    func unfavoriteTweet(tweetID: Int, success: @escaping () -> (), failure: @escaping (Error) -> ()){
+        let newUrl = "https://api.twitter.com/1.1/favorites/destroy.json"
+        TwitterAPICaller.client?.post(newUrl, parameters: ["id": tweetID], progress: nil, success: { (task: URLSessionDataTask, response: Any?) in
+            success()
+        }, failure: { (task: URLSessionDataTask?, error: Error) in
+            failure(error)
+        })
+    }
+    //Same process as last 3 methods
+    func retweetTweet(tweetID: Int, success: @escaping () -> (), failure: @escaping (Error) -> ()){
+        let newnewUrl = "https://api.twitter.com/1.1/statuses/retweet/\(tweetID).json"
+        TwitterAPICaller.client?.post(newnewUrl, parameters: ["id": tweetID], progress: nil, success: { (task: URLSessionDataTask, response: Any?) in
+            success()
+        }, failure: { (task: URLSessionDataTask?, error: Error) in
+            failure(error)
+        })
+    }
+    
+    
 }

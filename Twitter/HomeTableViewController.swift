@@ -64,6 +64,7 @@ class HomeTableViewController: UITableViewController {
         //For pull down to refresh, can use the addTarget method of a UIRefreshControl object, and then specify which refresh control is for the tableView with tableView.refreshControl =  myRefreshControl
         myRefreshControl.addTarget(self, action: #selector(loadTweets), for: .valueChanged)
         tableView.refreshControl = myRefreshControl
+        
         //Have to call loadTweets here so that the api is called everytime the home age is loaded onto the screen of the device we are using
         loadTweets()
         // Uncomment the following line to preserve selection between presentations
@@ -91,13 +92,18 @@ class HomeTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "tweetCell", for: indexPath) as! tweetCell
         //Since user is a key containing keys that lead to info about the user, we can extract this by first extracting the user key using tweetArray[indexPath.row], and then doing user["name"] to load the actual name of the user
         let user = tweetArray[indexPath.row]["user"] as! NSDictionary
-        cell.usernameLabel.text = user["name"] as? String
+        cell.usernamelabel.text = user["name"] as? String
         cell.tweetContent.text = tweetArray[indexPath.row]["text"] as? String
         let imageURL = URL(string:(user["profile_image_url_https"] as? String)!)
         let data = try? Data(contentsOf: imageURL!)
         if let imageData = data{
             cell.profileImage.image = UIImage(data: imageData)
         }
+        //Using twitter api bool returner to signal when the image of the favorite button should be changed to red
+        cell.setFavorite(isFavorited: tweetArray[indexPath.row]["favorited"] as! Bool)
+        //Using twitter api to get the id of a favorited tweet, to use in the favoriteTweet function associated with the favorite button
+        cell.tweetID = tweetArray[indexPath.row]["id"] as! Int
+        cell.setRetweeted(isRetweeted: tweetArray[indexPath.row]["retweeted"] as! Bool)
         return cell
     }
     override func numberOfSections(in tableView: UITableView) -> Int {
