@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2407675C25F41ADB0069C1AA /* TweetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2407675B25F41ADB0069C1AA /* TweetViewController.swift */; };
 		2415795425EC14EA009FFC57 /* tweetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2415795325EC14EA009FFC57 /* tweetCell.swift */; };
 		24462D5525EB6B000081DE7F /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24462D5425EB6B000081DE7F /* LoginView.swift */; };
 		24462D5825EB70DD0081DE7F /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24462D5725EB70DD0081DE7F /* HomeTableViewController.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2407675B25F41ADB0069C1AA /* TweetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetViewController.swift; sourceTree = "<group>"; };
 		2415795325EC14EA009FFC57 /* tweetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tweetCell.swift; sourceTree = "<group>"; };
 		24462D5425EB6B000081DE7F /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		24462D5725EB70DD0081DE7F /* HomeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 				37D29B8521F90E3400984A88 /* Assets.xcassets */,
 				6EBCF53121DF07FE00451C03 /* Info.plist */,
 				2415795325EC14EA009FFC57 /* tweetCell.swift */,
+				2407675B25F41ADB0069C1AA /* TweetViewController.swift */,
 			);
 			path = Twitter;
 			sourceTree = "<group>";
@@ -211,6 +214,7 @@
 			files = (
 				2415795425EC14EA009FFC57 /* tweetCell.swift in Sources */,
 				24462D5825EB70DD0081DE7F /* HomeTableViewController.swift in Sources */,
+				2407675C25F41ADB0069C1AA /* TweetViewController.swift in Sources */,
 				24462D5525EB6B000081DE7F /* LoginView.swift in Sources */,
 				6EBCF54421E047A500451C03 /* TwitterAPICaller.swift in Sources */,
 				6EBCF52621DF07FC00451C03 /* AppDelegate.swift in Sources */,

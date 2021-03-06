@@ -32,6 +32,7 @@ class HomeTableViewController: UITableViewController {
             print("could not retrieve tweet")
         })
     }
+    //In order for our newly tweeted twee to pop up as soon we post, we need to override the existing viewDidAppear method so that our tweet appear right away instead of right after refreshing
     //In order to implement a infinite scroll, need to add a number to the numberOfTweets variable, and then load in that specific number of tweets. When the user is near the end of the table, the loadMoreTweets method should be triggered and thus, a infinite scroll should occur
     func loadMoreTweets(){
         //Call the api using tweetapicaller, and the ethod getdictionarIES (for MULTIPLE tweets, getdictionARY is for a single tweet
@@ -71,7 +72,9 @@ class HomeTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
-    //THis method performs an action when the user clicks logout on the home page of the twitter app-- using the logout method from the twitter api caller
+    //In order for our newly tweeted twee to pop up as soon we post, we need to override the existing viewDidAppear method so that our tweet appear right away instead of right after refreshing
+
+    //This method performs an action when the user clicks logout on the home page of the twitter app-- using the logout method from the twitter api caller
     //Then use self.dismiss to return to the home page (ie, the initial view controller)-- essentially making the home page "disappear"
     //In order to fully make sure that a user can stay logged in, the UserDefaults bool for the login key has to be set to false when the logout button is pressed, so that once the condition is checkled in viewdidAppear in the initial view controller, the app immediately defaults to the login screen
     @IBAction func onLogout(_ sender: Any) {
