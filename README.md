@@ -23,7 +23,6 @@ The following **bonus** features are implemented:
 Here's a walkthrough of implemented user stories:
 
 <img src='http://g.recordit.co/a8dHNJ7w6O.gif' />
-# Project 3 - *Flitter App*
 
 **Flitter App** is a basic twitter app to read your tweets.
 
